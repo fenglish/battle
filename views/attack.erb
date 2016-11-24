@@ -1,6 +1,6 @@
 <%= $game.current_player.name %> has attacked <%= $game.opposing_player.name %>!<br>
 <% $game.attack %>
-<%= $game.opposing_player.name %> now has <%= $game.opposing_player.hp %>HP.
+<%= $game.opposing_player.name %> now has <%= $game.opposing_player.hp %>HP.<br>
 <% $game.switch_turn %>
 It is now <%= $game.current_player.name %>'s turn.
 <form action="/attack" method="get">

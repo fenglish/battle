@@ -20,6 +20,7 @@ class Battle < Sinatra::Base
   end
 
   get '/attack' do
+    @game = Game.new
     erb :attack
   end
   # start the server if ruby file executed directly

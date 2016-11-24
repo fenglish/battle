@@ -1,5 +1,5 @@
-<%= $player_1.name %> vs. <%= $player_2.name %><br>
-<%= $player_2.name %>: <%= Player::DEFAULT_HP %>HP
+<%= $game.player1.name %> vs. <%= $game.player2.name %><br>
+<%= $game.player2.name %>: <%= Player::DEFAULT_HP %>HP
 <form action="/attack" method="get">
   <input type="submit" value="ATTACK!">
 </form>

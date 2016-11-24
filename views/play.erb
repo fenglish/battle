@@ -1,5 +1,7 @@
 <%= $game.player1.name %> vs. <%= $game.player2.name %><br>
 <%= $game.player2.name %>: <%= Player::DEFAULT_HP %>HP
+<br>
+It is <%= $game.current_player.name %>'s turn
 <form action="/attack" method="get">
   <input type="submit" value="ATTACK!">
 </form>

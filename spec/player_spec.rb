@@ -10,4 +10,10 @@ describe Player do
     expect(player1.name).to eq(name1)
   end
 
+  it "should reduce hit points by 10 when player is attacked" do
+    player1.set_damage
+    expect(player1.hp).to eq Player::DEFAULT_HP - Player::MINIMUM_ATTACK
+  end
+
+
 end

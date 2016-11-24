@@ -18,4 +18,9 @@ RSpec.feature "Battle" do
      expect(page).to have_content( "John has attacked Tom!" )
    end
 
+  scenario "should show who's turn it is" do
+    sign_in_and_play
+    expect(page).to have_content( "It is John's turn" )       
+  end
+
 end

@@ -3,8 +3,8 @@ require 'game'
 describe Game do
 
   subject(:game) { described_class.new( player1, player2 ) }
-  let(:player1) { double :player }
-  let(:player2) { double :player }
+  let(:player1) { double :player1 }
+  let(:player2) { double :player2 }
 
   it "should start with two players" do
     expect(Game).to respond_to(:new).with(2).arguments
@@ -12,9 +12,17 @@ describe Game do
 
   it { is_expected.to respond_to :attack }
 
-  it "should be able to attack player2" do
-    allow(player1).to receive(:hp).and_return(60)
-    expect(game.attack(player1)).to eq 50
+  it "should start with Player 1's turn" do
+      expect(game.current_player).to eq player1
+  end
+
+  it { is_expected.to respond_to :switch_turn }
+
+  it "should switch to Player 2's turn after Player 1 has taken their turn" do
+    allow(player2).to receive(:set_damage)
+    game.attack
+    game.switch_turn
+    expect(game.current_player).to eq player2
   end
 
 end

@@ -24,6 +24,10 @@ class Battle < Sinatra::Base
   get '/attack' do
     erb :attack
   end
+
+  # get '/lost' do
+  #   erb :lost
+  # end
   # start the server if ruby file executed directly
   run! if app_file == $0
 

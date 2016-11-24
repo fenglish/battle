@@ -35,7 +35,20 @@ RSpec.feature "Battle" do
     expect(page).to have_content( "It is John's turn" )
   end
 
-  scenario "Users can" do
+  scenario "A message is displayed when a player loses" do
+    sign_in_and_play
+    11.times { click_button 'ATTACK!' }
+    # click_button 'ATTACK!'
+    # click_button 'ATTACK!'
+    # click_button 'ATTACK!'
+    # click_button 'ATTACK!'
+    # click_button 'ATTACK!'
+    # click_button 'ATTACK!'
+    # click_button 'ATTACK!'
+    # click_button 'ATTACK!'
+    # click_button 'ATTACK!'
+    # click_button 'ATTACK!'
+    expect(page).to have_content ("Tom has lost!")
   end
 
 end

@@ -25,4 +25,11 @@ describe Game do
     expect(game.current_player).to eq player2
   end
 
+  it { is_expected.to respond_to (:lost?) }
+
+  it "should know when a player has lost" do
+    allow(player2).to receive(:hp).and_return(0)
+    expect(game.lost?).to eq true
+  end
+
 end

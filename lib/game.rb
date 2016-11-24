@@ -26,4 +26,8 @@ class Game
     end
   end
 
+  def lost?
+    @opposing_player.hp == 0
+  end
+
 end
